@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "5091aeac-8ae8-4293-a8ac-b85a08dcc0c0",
+		"name": "opn-1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21537576",
+		"_collection_link": "https://orange-desert-524202.postman.co/workspace/Team-Workspace~dba99c8d-8775-46ca-8f05-37638909798b/collection/21537576-5091aeac-8ae8-4293-a8ac-b85a08dcc0c0?action=share&source=collection_link&creator=21537576"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"apple@gmail.com\",\n    \"password\": \"123456\",\n    \"name\": \"aye\",\n    \"dob\": \"1990-05-15\",\n    \"gender\": \"male\",\n    \"address\": \"ygn\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProfile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "faketoken_user1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/profile/cbb2f7f6-683d-4851-a222-028b382dd5eb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"profile",
+						"cbb2f7f6-683d-4851-a222-028b382dd5eb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProfile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "faketoken_user1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"new@gmail.com\",\n    \"password\": \"123456\",\n    \"name\": \"ayenew\",\n    \"dob\": \"1990-05-15\",\n    \"gender\": \"male\",\n    \"address\": \"ygn\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/profile/cbb2f7f6-683d-4851-a222-028b382dd5eb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"profile",
+						"cbb2f7f6-683d-4851-a222-028b382dd5eb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProfile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "faketoken_user1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/profile/99ae4fa8-7703-4fe1-b008-15fd620534c4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"profile",
+						"99ae4fa8-7703-4fe1-b008-15fd620534c4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changePassword",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "faketoken_user1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"123456\",\n    \"newPassword\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/profile/cbb2f7f6-683d-4851-a222-028b382dd5eb/password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"profile",
+						"cbb2f7f6-683d-4851-a222-028b382dd5eb",
+						"password"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

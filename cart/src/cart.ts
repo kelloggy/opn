@@ -34,6 +34,7 @@ export class Cart {
 
   addItem(productId: number, quantity: number, price: number) {
     this.items.set(productId, { quantity, price });
+    this.applyFreebies();
   }
 
   // absolute update
@@ -43,12 +44,12 @@ export class Cart {
     } else {
       this.items.set(productId, { quantity, price });
     }
-    //   this.applyFreebies();
+    this.applyFreebies();
   }
 
   removeProduct(productId: number) {
     this.items.delete(productId);
-    //   this.applyFreebies();
+    this.applyFreebies();
   }
 
   destroyCart() {
@@ -124,8 +125,10 @@ export class Cart {
     ] of this.freebies.entries()) {
       // Check if the purchased product is in the cart
       if (this.items.has(purchasedProductId)) {
-        // Add the free product to the cart
         this.items.set(freebieProductId, { quantity: 1, price: 0 });
+      } else {
+        this.items.delete(freebieProductId);
+        this.freebies.delete(purchasedProductId);
       }
     }
   }

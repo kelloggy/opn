@@ -1,0 +1,20 @@
+{
+  "name": "cart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cart.ts",
+  "scripts": {
+    "test": "jest",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.10",
+    "jest": "^29.7.0",
+    "prettier": "^3.5.3",
+    "ts-jest": "^29.2.6",
+    "typescript": "^5.8.2"
+  }
+}
